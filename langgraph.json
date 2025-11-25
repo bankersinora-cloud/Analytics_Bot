@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "graphs": {
+    "taabi_mcp_server": {
+      "entrypoint": "server:mcp",
+      "description": "TAABI Multi-Agent MCP Server",
+      "env": {
+        "OPENAI_API_KEY": "{{ env.OPENAI_API_KEY }}",
+        "HUGGINGFACE_HUB_TOKEN": "{{ env.HUGGINGFACE_HUB_TOKEN }}"
+      }
+    }
+  }
+}
