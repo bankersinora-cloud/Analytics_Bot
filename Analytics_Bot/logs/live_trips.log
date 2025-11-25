@@ -1,0 +1,308 @@
+2025-11-24 12:28:01,360 - INFO - USER QUERY: live trips data
+2025-11-24 12:28:25,344 - INFO - Generated SQL Query:
+2025-11-24 12:28:25,348 - INFO - ```sql
+SELECT trip_id, latitude, longitude, timestamp_column, tracking_status 
+FROM indent_trip_tracking 
+ORDER BY timestamp_column DESC 
+LIMIT 10;
+```
+2025-11-24 12:28:25,354 - INFO - RESULT: Here are the most recent live trip tracking data entries:
+
+1. **Trip ID**: d91368f7-e21f-451f-86f6-91066ffe7ca3
+   - **Latitude**: 19.384608
+   - **Longitude**: 73.214944
+   - **Timestamp**: 2025-11-24 08:32:19 UTC
+   - **Tracking Status**: halt
+
+2. **Trip ID**: 81f21ed1-698f-4082-ba7e-94d0f433ed01
+   - **Latitude**: 12.007718
+   - **Longitude**: 76.669685
+   - **Timestamp**: 2025-11-23 22:57:56 UTC
+   - **Tracking Status**: running
+
+3. **Trip ID**: 95dcf811-b06f-48c5-8a73-28b465960642
+   - **Latitude**: 12.007718
+   - **Longitude**: 76.669685
+   - **Timestamp**: 2025-11-23 22:57:56 UTC
+   - **Tracking Status**: running
+
+4. **Trip ID**: 881cd1c2-601a-4073-b7d0-a4398cf95e8a
+   - **Latitude**: 12.160323
+   - **Longitude**: 76.694466
+   - **Timestamp**: 2025-11-23 22:51:28 UTC
+   - **Tracking Status**: running
+
+5. **Trip ID**: 1fcf70c8-13b6-4207-a10d-d31cc8b775b7
+   - **Latitude**: 12.019183
+   - **Longitude**: 76.677475
+   - **Timestamp**: 2025-11-23 22:49:10 UTC
+   - **Tracking Status**: running
+
+6. **Trip ID**: d0719449-9e5e-48e1-938f-b27588b77d0d
+   - **Latitude**: 12.158703
+   - **Longitude**: 76.698036
+   - **Timestamp**: 2025-11-23 21:57:45 UTC
+   - **Tracking Status**: running
+
+7. **Trip ID**: b4c0593c-01e5-4b3c-9666-1307367a5cda
+   - **Latitude**: 12.341455
+   - **Longitude**: 76.679817
+   - **Timestamp**: 2025-11-23 21:32:45 UTC
+   - **Tracking Status**: running
+
+8. **Trip ID**: 9d24b2f0-2c30-4edf-81b8-0039220769f8
+   - **Latitude**: 12.341455
+   - **Longitude**: 76.679817
+   - **Timestamp**: 2025-11-23 21:32:45 UTC
+   - **Tracking Status**: running
+
+9. **Trip ID**: e40ea46b-453f-4240-a01c-7b6e152d50a1
+   - **Latitude**: 13.231722
+   - **Longitude**: 77.728912
+   - **Timestamp**: 2025-11-23 21:13:01 UTC
+   - **Tracking Status**: running
+
+10. **Trip ID**: 00ee6eaf-fed8-48a6-9e6e-0250369ef23c
+    - **Latitude**: 15.396573
+    - **Longitude**: 80.038757
+    - **Timestamp**: 2025-11-23 20:31:26 UTC
+    - **Tracking Status**: running
+
+If you need more information or specific details, feel free to ask!...
+2025-11-24 12:28:25,380 - INFO - TIME TAKEN: 23.99 sec
+2025-11-24 12:28:25,382 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:44:25,462 - INFO - USER QUERY: how many trips are currently in transit
+2025-11-24 12:44:25,462 - INFO - USER QUERY: how many trips are currently in transit
+2025-11-24 12:44:38,137 - INFO - Generated SQL Query:
+2025-11-24 12:44:38,137 - INFO - Generated SQL Query:
+2025-11-24 12:44:38,142 - INFO - ```sql
+SELECT COUNT(*) AS in_transit_count FROM indent_trips WHERE current_status = 1;
+```
+2025-11-24 12:44:38,142 - INFO - ```sql
+SELECT COUNT(*) AS in_transit_count FROM indent_trips WHERE current_status = 1;
+```
+2025-11-24 12:44:38,146 - INFO - RESULT: There are currently 2,687 trips in transit....
+2025-11-24 12:44:38,146 - INFO - RESULT: There are currently 2,687 trips in transit....
+2025-11-24 12:44:38,148 - INFO - TIME TAKEN: 12.69 sec
+2025-11-24 12:44:38,148 - INFO - TIME TAKEN: 12.69 sec
+2025-11-24 12:44:38,150 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:44:38,150 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:45:07,033 - INFO - USER QUERY: which transporter has the most delayed trips
+2025-11-24 12:45:07,033 - INFO - USER QUERY: which transporter has the most delayed trips
+2025-11-24 12:45:19,746 - INFO - Generated SQL Query:
+2025-11-24 12:45:19,746 - INFO - Generated SQL Query:
+2025-11-24 12:45:19,752 - INFO - ```sql
+SELECT transporter_id, SUM(delay_trip) AS total_delayed_trips
+FROM day_wise_summary
+GROUP BY transporter_id
+ORDER BY total_delayed_trips DESC
+LIMIT 10;
+```
+2025-11-24 12:45:19,752 - INFO - ```sql
+SELECT transporter_id, SUM(delay_trip) AS total_delayed_trips
+FROM day_wise_summary
+GROUP BY transporter_id
+ORDER BY total_delayed_trips DESC
+LIMIT 10;
+```
+2025-11-24 12:45:19,758 - INFO - RESULT: The query returned a list of transporters along with their total delayed trips. However, it seems that most of the transporters have a `None` value for delayed trips, except for one transporter with a total of 126,501 delayed trips.
+
+Here is the transporter with the most delayed trips:
+
+- **Transporter ID**: `04419f44-2ccf-48c3-a8b6-7a37a54548c9`
+- **Total Delayed Trips**: 126,501
+
+If you need more information or further analysis, feel free to ask!...
+2025-11-24 12:45:19,758 - INFO - RESULT: The query returned a list of transporters along with their total delayed trips. However, it seems that most of the transporters have a `None` value for delayed trips, except for one transporter with a total of 126,501 delayed trips.
+
+Here is the transporter with the most delayed trips:
+
+- **Transporter ID**: `04419f44-2ccf-48c3-a8b6-7a37a54548c9`
+- **Total Delayed Trips**: 126,501
+
+If you need more information or further analysis, feel free to ask!...
+2025-11-24 12:45:19,764 - INFO - TIME TAKEN: 12.73 sec
+2025-11-24 12:45:19,764 - INFO - TIME TAKEN: 12.73 sec
+2025-11-24 12:45:19,766 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:45:19,766 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:45:37,740 - INFO - USER QUERY: how many transporters are active right now
+2025-11-24 12:45:37,740 - INFO - USER QUERY: how many transporters are active right now
+2025-11-24 12:45:44,845 - INFO - Generated SQL Query:
+2025-11-24 12:45:44,845 - INFO - Generated SQL Query:
+2025-11-24 12:45:44,848 - INFO - ```sql
+SELECT COUNT(*) AS active_transporters FROM user_kpi_mapping WHERE current_status = 1;
+```
+2025-11-24 12:45:44,848 - INFO - ```sql
+SELECT COUNT(*) AS active_transporters FROM user_kpi_mapping WHERE current_status = 1;
+```
+2025-11-24 12:45:44,851 - INFO - RESULT: There are currently 707 active transporters....
+2025-11-24 12:45:44,851 - INFO - RESULT: There are currently 707 active transporters....
+2025-11-24 12:45:44,854 - INFO - TIME TAKEN: 7.11 sec
+2025-11-24 12:45:44,854 - INFO - TIME TAKEN: 7.11 sec
+2025-11-24 12:45:44,855 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:45:44,855 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:08:47,954 - INFO - USER QUERY: Show me all live trips
+2025-11-24 12:09:08,279 - INFO - Generated SQL Query:
+2025-11-24 12:09:08,281 - INFO - ```sql
+SELECT t.uuid, t.trip_no, t.trip_status
+FROM indent_trips t
+JOIN indent_trips_redis_status r ON t.uuid = r.trip_id
+WHERE r.trip_status = 'initiated'
+ORDER BY t.created_on DESC
+LIMIT 10;
+```
+2025-11-24 12:09:08,285 - INFO - RESULT: Here are the details of the live trips:
+
+1. **Trip No:** 002882-001, **Status:** vehicle_rejected
+2. **Trip No:** 003036-001, **Status:** indent_cancelled
+3. **Trip No:** 003030-002, **Status:** reporting_pending
+4. **Trip No:** 003030-001, **Status:** loading_area
+5. **Trip No:** 000093-001, **Status:** Cancelled
+6. **Trip No:** 000093-002, **Status:** vehicle_rejected
+7. **Trip No:** 002982-002, **Status:** loading_area
+8. **Trip No:** 002982-001, **Status:** loading_area
+9. **Trip No:** 003000-001, **Status:** in_transit
+10. **Trip No:** 003000-002, **Status:** reporting_pending
+
+Please note that some trips may have statuses indicating they are not currently active (e.g., "Cancelled" or "vehicle_rejected")....
+2025-11-24 12:09:08,291 - INFO - TIME TAKEN: 20.33 sec
+2025-11-24 12:09:08,293 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:11:01,508 - INFO - USER QUERY: What is the average time for indent acceptance?
+2025-11-24 12:11:21,777 - INFO - Generated SQL Query:
+2025-11-24 12:11:21,779 - INFO - ```sql
+SELECT AVG(vehicle_assignment_dt - acpt_deadline_dt) AS average_acceptance_time
+FROM indents
+WHERE vehicle_assignment_dt IS NOT NULL AND acpt_deadline_dt IS NOT NULL;
+```
+2025-11-24 12:11:21,781 - INFO - RESULT: The average time for indent acceptance is approximately 15688.99 seconds, which is about 4 hours and 20 minutes....
+2025-11-24 12:11:21,783 - INFO - TIME TAKEN: 20.28 sec
+2025-11-24 12:11:21,784 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:13:05,891 - INFO - USER QUERY: Which sites have the highest detention?
+2025-11-24 12:13:30,162 - INFO - RESULT: The sites with the highest detention times, based on the total yard status time, are as follows:
+
+1. **Site ID:** f79f1c70-0f35-42e6-bc3d-35d45b8583ef, **Total Detention Time:** 14,108,300,008 seconds
+2. **Site ID:** 9eccc1bc-84e6-4122-8c24-bc4fe9933d91, **Total Detention Time:** 7,055,518,727 seconds
+3. **Site ID:** e439d61f-6182-44e8-b7db-ada22e618e42, **Total Detention Time:** 5,291,275,885 seconds
+4. **Site ID:** 2991cbb0-48a8-43ad-bffb-714178fa823f, **Total Detention Time:** 5,290,487,384 seconds
+5. **Site ID:** bc6a96bb-24d1-4e4b-97c4-ff532b6f97f2, **Total Detention Time:** 3,527,422,226 seconds
+6. **Site ID:** 8f16be0e-4e39-4a66-a5d5-59c59c747f37, **Total Detention Time:** 1,763,965,669 seconds
+7. **Site ID:** a294db7b-b1c5-460d-97ef-37847e540747, **Total Detention Time:** 1,763,705,634 seconds
+8. **Site ID:** 83357472-e44e-4f1b-b56a-3c185131172e, **Total Detention Time:** 1,763,443,583 seconds
+
+These values represent the total detention time for each site, indicating which sites are experiencing the highest levels of vehicle detention....
+2025-11-24 12:13:30,170 - INFO - TIME TAKEN: 24.28 sec
+2025-11-24 12:13:30,171 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:13:34,440 - INFO - USER QUERY: How many indents were created in last 24 hours?
+2025-11-24 12:13:49,751 - INFO - Generated SQL Query:
+2025-11-24 12:13:49,753 - INFO - ```sql
+SELECT COUNT(*) AS indent_count
+FROM indents
+WHERE created_on > NOW() - INTERVAL '1 day';
+```
+2025-11-24 12:13:49,754 - INFO - RESULT: A total of 14 indents were created in the last 24 hours....
+2025-11-24 12:13:49,755 - INFO - TIME TAKEN: 15.32 sec
+2025-11-24 12:13:49,756 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:13:58,838 - INFO - USER QUERY: Which transporter has the best load utilisation?
+2025-11-24 12:14:06,431 - INFO - RESULT: To determine which transporter has the best load utilization, we can analyze the `day_wise_summary` table, specifically focusing on the columns related to transporters and their performance metrics. 
+
+The relevant columns in the `day_wise_summary` table include:
+- `transporter_id`: Identifies the transporter.
+- `vehicle_requested`: The number of vehicles requested.
+- `vehicle_assigned`: The number of vehicles assigned.
+- `trip_count`: The total number of trips made.
+- `trip_fulfilled`: The number of trips that were fulfilled.
+
+Load utilization can be calculated as the ratio of `vehicle_assigned` to `vehicle_requested`, and we can also consider the ratio of `trip_fulfilled` to `trip_count` to assess the effectiveness of the trips.
+
+To find the transporter with the best load utilization, we would typically calculate these ratios for each transporter and then rank them accordingly. 
+
+If you would like, I can provide a query to retrieve this information from the database. Would you like me to proceed with that?...
+2025-11-24 12:14:06,441 - INFO - TIME TAKEN: 7.6 sec
+2025-11-24 12:14:06,443 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:16:55,006 - INFO - USER QUERY: How do I upload a POD for a trip?
+2025-11-24 12:17:01,027 - INFO - RESULT: To upload a Proof of Delivery (POD) for a trip, you would typically follow these steps based on the EPOD workflow:
+
+1. **Prepare the Document**: Ensure that the POD document is ready for upload. This could be in various formats such as PDF, image files, etc.
+
+2. **Access the EPOD System**: Log into the EPOD system where you manage trip documents.
+
+3. **Locate the Trip**: Find the specific trip for which you want to upload the POD. This can usually be done by searching for the trip ID or number.
+
+4. **Upload the Document**:
+   - Use the upload functionality provided in the system. You will need to select the document file from your device.
+   - Fill in any required fields such as document type (e.g., EPOD), remarks, and any other relevant information.
+
+5. **Submit the Document**: After filling in the necessary details, submit the document. The system will typically save the document and link it to the corresponding trip.
+
+6. **Verification**: Once uploaded, the document may go through a verification process. You can check the status of the upload to ensure it has been successfully processed.
+
+7. **Review and Confirmation**: After the document is verified, you should receive a confirmation that the POD has been successfully uploaded and linked to the trip.
+
+This workflow ensures that all necessary documentation is properly managed and associated with the respective trips, facilitating smooth logistics operations....
+2025-11-24 12:17:01,037 - INFO - TIME TAKEN: 6.02 sec
+2025-11-24 12:17:01,039 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:18:25,146 - INFO - USER QUERY: What alerts are currently active
+2025-11-24 12:18:33,697 - INFO - Generated SQL Query:
+2025-11-24 12:18:33,699 - INFO - ```sql
+SELECT alert_name, payload FROM alert_logs WHERE is_active = true LIMIT 10;
+```
+2025-11-24 12:18:33,700 - INFO - RESULT: Currently, the following active alerts are present:
+
+1. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+2. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+3. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+4. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+5. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+6. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+7. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+8. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+9. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+10. **Alert Name:** draft_contract
+    - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+All alerts are related to the "draft_contract" and contain similar payload structures....
+2025-11-24 12:18:33,703 - INFO - TIME TAKEN: 8.56 sec
+2025-11-24 12:18:33,703 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:20:21,657 - INFO - USER QUERY: What is my average auction fill time?
+2025-11-24 12:20:26,592 - INFO - RESULT: To calculate the average auction fill time, we would typically look at the relevant metrics in the `day_wise_summary` table. However, the specific column for auction fill time is not explicitly listed in the schema provided.
+
+The `day_wise_summary` table includes various metrics related to trips and indents, such as:
+- `indent_count`
+- `indent_accepted`
+- `indent_fulfilled`
+- `trip_count`
+- `trip_fulfilled`
+
+To derive the average auction fill time, we would need to analyze the time taken for indents to be accepted and fulfilled, which may involve calculating the difference between the time an indent was created and the time it was accepted or fulfilled.
+
+If you have a specific definition or formula for "auction fill time," please provide that, and I can help you further with the analysis. Otherwise, we may need to explore additional data or metrics related to auction processes in the database....
+2025-11-24 12:20:26,600 - INFO - TIME TAKEN: 4.94 sec
+2025-11-24 12:20:26,602 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:22:03,232 - INFO - USER QUERY: Which transporter has the highest bid participation rate
+2025-11-24 12:22:18,268 - INFO - RESULT: The results indicate that many transporters have `None` values for both `proposal_assigned` and `proposal_accepted`, which suggests that they may not have participated in any bids. 
+
+However, one transporter (UUID: `04419f44-2ccf-48c3-a8b6-7a37a54548c9`) has `0` proposals accepted, but it is unclear how many proposals were assigned to it.
+
+This data suggests that there may be limited participation in the bidding process among the transporters. To gain more insights, I can check the total number of proposals assigned across all transporters to see if there are any active participants. Would you like me to proceed with that?...
+2025-11-24 12:22:18,271 - INFO - TIME TAKEN: 15.05 sec
+2025-11-24 12:22:18,271 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:51:34,818 - INFO - USER QUERY: Show me non-fulfilment reasons trend over last 3 months
+2025-11-24 18:19:27,973 - ERROR - [Errno 60] Operation timed out

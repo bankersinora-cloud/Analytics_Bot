@@ -1,0 +1,315 @@
+2025-11-24 12:21:09,260 - INFO - USER QUERY: give control tower data of this year
+2025-11-24 12:21:49,192 - INFO - Generated SQL Query:
+2025-11-24 12:21:49,197 - INFO - ```sql
+SELECT uuid, vehicle_number, created_on 
+FROM control_tower_vehicles 
+WHERE EXTRACT(YEAR FROM created_on) = 2023
+LIMIT 10;
+```
+2025-11-24 12:21:49,202 - INFO - RESULT: It seems that there are no records available in the control tower data for this year in both the `control_tower_indents` and `control_tower_vehicles` tables. 
+
+If you have any other questions or need further assistance, feel free to ask!...
+2025-11-24 12:21:49,206 - INFO - TIME TAKEN: 39.94 sec
+2025-11-24 12:21:49,207 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:22:17,810 - INFO - USER QUERY: give me data for indents
+2025-11-24 12:24:18,974 - INFO - Generated SQL Query:
+2025-11-24 12:25:19,212 - INFO - ```sql
+SELECT uuid, enterprise_id, source_id, route_id, max_transit_time, delivery_type, indent_status, created_on, indent_no FROM indents ORDER BY created_on DESC LIMIT 10;
+```
+2025-11-24 12:26:19,496 - INFO - RESULT: Here are some recent entries from the `indents` table:
+
+1. **Indent No:** 3039
+   - **UUID:** 7ada14fd-6604-463e-84d4-dbea1e53504f
+   - **Enterprise ID:** a5df87ea-e177-4066-938f-2bb776df3932
+   - **Source ID:** f79f1c70-0f35-42e6-bc3d-35d45b8583ef
+   - **Route ID:** 9b9d063b-d350-4eb5-84d1-0e284339495a
+   - **Max Transit Time:** 86400
+   - **Delivery Type:** Standard
+   - **Status:** expired
+   - **Created On:** 1763965849
+
+2. **Indent No:** 3038
+   - **UUID:** bccc55b9-383c-4124-b8a3-0d34113e8b14
+   - **Enterprise ID:** a5df87ea-e177-4066-938f-2bb776df3932
+   - **Source ID:** b3158ebc-b401-426d-aea8-bb3ef5c1e971
+   - **Route ID:** 03545eea-7408-40b7-b945-c06a602e3f33
+   - **Max Transit Time:** 86400
+   - **Delivery Type:** Standard
+   - **Status:** indent_fulfilled
+   - **Created On:** 1763965601
+
+3. **Indent No:** 103
+   - **UUID:** 670fe9a2-8663-4a52-bd99-ac958702088c
+   - **Enterprise ID:** f7cdabe9-7fbe-43c3-9b20-9fce49bf0492
+   - **Source ID:** ffd70786-9e97-4427-afef-921a89dbbc43
+   - **Route ID:** b975b2fa-9492-41bc-8976-44c856f731a6
+   - **Max Transit Time:** 172800
+   - **Delivery Type:** Standard
+   - **Status:** indent_fulfilled
+   - **Created On:** 1763965103
+
+4. **Indent No:** 100
+   - **UUID:** 1d7ab9ff-4e0a-41bb-8dc1-0f7f408a7047
+   - **Enterprise ID:** f7cdabe9-7fbe-43c3-9b20-9fce49bf0492
+   - **Source ID:** 2991cbb0-48a8-43ad-bffb-714178fa823f
+   - **Route ID:** 13974741-66da-4fc6-8d69-7cb0f846d77f
+   - **Max Transit Time:** 172800
+   - **Delivery Type:** Standard
+   - **Status:** pending_acceptance
+   - **Created On:** 1763964440
+
+5. **Indent No:** 102
+   - **UUID:** 128fc5e7-39e2-48da-bc1e-ad9f211ca480
+   - **Enterprise ID:** f7cdabe9-7fbe-43c3-9b20-9fce49bf0492
+   - **Source ID:** 2991cbb0-48a8-43ad-bffb-714178fa823f
+   - **Route ID:** 13974741-66da-4fc6-8d69-7cb0f846d77f
+   - **Max Transit Time:** 172800
+   - **Delivery Type:** Standard
+   - **Status:** pending_vehicle_assignment
+   - **Created On:** 1763964440
+
+6. **Indent No:** 101
+   - **UUID:** e907be35-7b39-4c9d-b542-a9116d024409
+   - **Enterprise ID:** f7cdabe9-7fbe-43c3-9b20-9fce49bf0492
+   - **Source ID:** 2991cbb0-48a8-43ad-bffb-714178fa823f
+   - **Route ID:** 13974741-66da-4fc6-8d69-7cb0f846d77f
+   - **Max Transit Time:** 172800
+   - **Delivery Type:** Standard
+   - **Status:** pending_acceptance
+   - **Created On:** 1763964440
+
+7. **Indent No:** 99
+   - **UUID:** 20e7ad29-327d-4610-a9e5-355b35c6634f
+   - **Enterprise ID:** f7cdabe9-7fbe-43c3-9b20-9fce49bf0492
+   - **Source ID:** 2991cbb0-48a8-43ad-bffb-714178fa823f
+   - **Route ID:** 13974741-66da-4fc6-8d69-7cb0f846d77f
+   - **Max Transit Time:** 172800
+   - **Delivery Type:** Standard
+   - **Status:** pending_acceptance
+   - **Created On:** 1763964362
+
+8. **Indent No:** 98
+   - **UUID:** b3658925-6ede-4dac-9e64-5fc83e4b80aa
+   - **Enterprise ID:** f7cdabe9-7fbe-43c3-9b20-9fce49bf0492
+   - **Source ID:** 2991cbb0-48a8-43ad-bffb-714178fa823f
+   - **Route ID:** 13974741-66da-4fc6-8d69-7cb0f846d77f
+   - **Max Transit Time:** 172800
+   - **Delivery Type:** Standard
+   - **Status:** indent_fulfilled
+   - **Created On:** 1763964207
+
+9. **Indent No:** 97
+   - **UUID:** 6f1d912a-c705-4bf4-86d1-3cef066bb658
+   - **Enterprise ID:** f7cdabe9-7fbe-43c3-9b20-9fce49bf0492
+   - **Source ID:** 2991cbb0-48a8-43ad-bffb-714178fa823f
+   - **Route ID:** 13974741-66da-4fc6-8d69-7cb0f846d77f
+   - **Max Transit Time:** 172800
+   - **Delivery Type:** Standard
+   - **Status:** pending_acceptance
+   - **Created On:** 1763963803
+
+10. **Indent No:** 3037
+    - **UUID:** 8a5cf3ed-8d77-4bdb-9816-2c75f79cf45c
+    - **Enterprise ID:** a5df87ea-e177-4066-938f-2bb776df3932
+    - **Source ID:** 450c9fdd-083d-49d9-9a90-aca0eb9b27d4
+    - **Route ID:** c5db5210-64ea-4b01-b733-e0710636deac
+    - **Max Transit Time:** 172800
+    - **Delivery Type:** Standard
+    - **Status:** rejected
+    - **Created On:** 1763962707
+
+If you need more specific information or further details, feel free to ask!...
+2025-11-24 12:13:05,891 - INFO - USER QUERY: Which sites have the highest detention?
+2025-11-24 12:13:30,162 - INFO - RESULT: The sites with the highest detention times, based on the total yard status time, are as follows:
+
+1. **Site ID:** f79f1c70-0f35-42e6-bc3d-35d45b8583ef, **Total Detention Time:** 14,108,300,008 seconds
+2. **Site ID:** 9eccc1bc-84e6-4122-8c24-bc4fe9933d91, **Total Detention Time:** 7,055,518,727 seconds
+3. **Site ID:** e439d61f-6182-44e8-b7db-ada22e618e42, **Total Detention Time:** 5,291,275,885 seconds
+4. **Site ID:** 2991cbb0-48a8-43ad-bffb-714178fa823f, **Total Detention Time:** 5,290,487,384 seconds
+5. **Site ID:** bc6a96bb-24d1-4e4b-97c4-ff532b6f97f2, **Total Detention Time:** 3,527,422,226 seconds
+6. **Site ID:** 8f16be0e-4e39-4a66-a5d5-59c59c747f37, **Total Detention Time:** 1,763,965,669 seconds
+7. **Site ID:** a294db7b-b1c5-460d-97ef-37847e540747, **Total Detention Time:** 1,763,705,634 seconds
+8. **Site ID:** 83357472-e44e-4f1b-b56a-3c185131172e, **Total Detention Time:** 1,763,443,583 seconds
+
+These values represent the total detention time for each site, indicating which sites are experiencing the highest levels of vehicle detention....
+2025-11-24 12:13:30,170 - INFO - TIME TAKEN: 24.28 sec
+2025-11-24 12:13:30,171 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:13:34,440 - INFO - USER QUERY: How many indents were created in last 24 hours?
+2025-11-24 12:13:49,751 - INFO - Generated SQL Query:
+2025-11-24 12:13:49,753 - INFO - ```sql
+SELECT COUNT(*) AS indent_count
+FROM indents
+WHERE created_on > NOW() - INTERVAL '1 day';
+```
+2025-11-24 12:13:49,754 - INFO - RESULT: A total of 14 indents were created in the last 24 hours....
+2025-11-24 12:13:49,755 - INFO - TIME TAKEN: 15.32 sec
+2025-11-24 12:13:49,756 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:13:58,838 - INFO - USER QUERY: Which transporter has the best load utilisation?
+2025-11-24 12:14:06,431 - INFO - RESULT: To determine which transporter has the best load utilization, we can analyze the `day_wise_summary` table, specifically focusing on the columns related to transporters and their performance metrics. 
+
+The relevant columns in the `day_wise_summary` table include:
+- `transporter_id`: Identifies the transporter.
+- `vehicle_requested`: The number of vehicles requested.
+- `vehicle_assigned`: The number of vehicles assigned.
+- `trip_count`: The total number of trips made.
+- `trip_fulfilled`: The number of trips that were fulfilled.
+
+Load utilization can be calculated as the ratio of `vehicle_assigned` to `vehicle_requested`, and we can also consider the ratio of `trip_fulfilled` to `trip_count` to assess the effectiveness of the trips.
+
+To find the transporter with the best load utilization, we would typically calculate these ratios for each transporter and then rank them accordingly. 
+
+If you would like, I can provide a query to retrieve this information from the database. Would you like me to proceed with that?...
+2025-11-24 12:14:06,441 - INFO - TIME TAKEN: 7.6 sec
+2025-11-24 12:14:06,443 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:16:55,006 - INFO - USER QUERY: How do I upload a POD for a trip?
+2025-11-24 12:17:01,027 - INFO - RESULT: To upload a Proof of Delivery (POD) for a trip, you would typically follow these steps based on the EPOD workflow:
+
+1. **Prepare the Document**: Ensure that the POD document is ready for upload. This could be in various formats such as PDF, image files, etc.
+
+2. **Access the EPOD System**: Log into the EPOD system where you manage trip documents.
+
+3. **Locate the Trip**: Find the specific trip for which you want to upload the POD. This can usually be done by searching for the trip ID or number.
+
+4. **Upload the Document**:
+   - Use the upload functionality provided in the system. You will need to select the document file from your device.
+   - Fill in any required fields such as document type (e.g., EPOD), remarks, and any other relevant information.
+
+5. **Submit the Document**: After filling in the necessary details, submit the document. The system will typically save the document and link it to the corresponding trip.
+
+6. **Verification**: Once uploaded, the document may go through a verification process. You can check the status of the upload to ensure it has been successfully processed.
+
+7. **Review and Confirmation**: After the document is verified, you should receive a confirmation that the POD has been successfully uploaded and linked to the trip.
+
+This workflow ensures that all necessary documentation is properly managed and associated with the respective trips, facilitating smooth logistics operations....
+2025-11-24 12:17:01,037 - INFO - TIME TAKEN: 6.02 sec
+2025-11-24 12:17:01,039 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:18:25,146 - INFO - USER QUERY: What alerts are currently active
+2025-11-24 12:18:25,146 - INFO - USER QUERY: What alerts are currently active
+2025-11-24 12:18:33,697 - INFO - Generated SQL Query:
+2025-11-24 12:18:33,697 - INFO - Generated SQL Query:
+2025-11-24 12:18:33,699 - INFO - ```sql
+SELECT alert_name, payload FROM alert_logs WHERE is_active = true LIMIT 10;
+```
+2025-11-24 12:18:33,699 - INFO - ```sql
+SELECT alert_name, payload FROM alert_logs WHERE is_active = true LIMIT 10;
+```
+2025-11-24 12:18:33,700 - INFO - RESULT: Currently, the following active alerts are present:
+
+1. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+2. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+3. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+4. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+5. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+6. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+7. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+8. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+9. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+10. **Alert Name:** draft_contract
+    - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+All alerts are related to the "draft_contract" and contain similar payload structures....
+2025-11-24 12:18:33,700 - INFO - RESULT: Currently, the following active alerts are present:
+
+1. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+2. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+3. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+4. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+5. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+6. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+7. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+8. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+9. **Alert Name:** draft_contract
+   - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+10. **Alert Name:** draft_contract
+    - **Payload:** Contains site_id, template, contract_id, enterprise_id, transporter_id.
+
+All alerts are related to the "draft_contract" and contain similar payload structures....
+2025-11-24 12:18:33,703 - INFO - TIME TAKEN: 8.56 sec
+2025-11-24 12:18:33,703 - INFO - TIME TAKEN: 8.56 sec
+2025-11-24 12:18:33,703 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:18:33,703 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:20:21,657 - INFO - USER QUERY: What is my average auction fill time?
+2025-11-24 12:20:21,657 - INFO - USER QUERY: What is my average auction fill time?
+2025-11-24 12:20:26,592 - INFO - RESULT: To calculate the average auction fill time, we would typically look at the relevant metrics in the `day_wise_summary` table. However, the specific column for auction fill time is not explicitly listed in the schema provided.
+
+The `day_wise_summary` table includes various metrics related to trips and indents, such as:
+- `indent_count`
+- `indent_accepted`
+- `indent_fulfilled`
+- `trip_count`
+- `trip_fulfilled`
+
+To derive the average auction fill time, we would need to analyze the time taken for indents to be accepted and fulfilled, which may involve calculating the difference between the time an indent was created and the time it was accepted or fulfilled.
+
+If you have a specific definition or formula for "auction fill time," please provide that, and I can help you further with the analysis. Otherwise, we may need to explore additional data or metrics related to auction processes in the database....
+2025-11-24 12:20:26,592 - INFO - RESULT: To calculate the average auction fill time, we would typically look at the relevant metrics in the `day_wise_summary` table. However, the specific column for auction fill time is not explicitly listed in the schema provided.
+
+The `day_wise_summary` table includes various metrics related to trips and indents, such as:
+- `indent_count`
+- `indent_accepted`
+- `indent_fulfilled`
+- `trip_count`
+- `trip_fulfilled`
+
+To derive the average auction fill time, we would need to analyze the time taken for indents to be accepted and fulfilled, which may involve calculating the difference between the time an indent was created and the time it was accepted or fulfilled.
+
+If you have a specific definition or formula for "auction fill time," please provide that, and I can help you further with the analysis. Otherwise, we may need to explore additional data or metrics related to auction processes in the database....
+2025-11-24 12:20:26,600 - INFO - TIME TAKEN: 4.94 sec
+2025-11-24 12:20:26,600 - INFO - TIME TAKEN: 4.94 sec
+2025-11-24 12:20:26,602 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:20:26,602 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:22:03,232 - INFO - USER QUERY: Which transporter has the highest bid participation rate
+2025-11-24 12:22:03,232 - INFO - USER QUERY: Which transporter has the highest bid participation rate
+2025-11-24 12:22:18,268 - INFO - RESULT: The results indicate that many transporters have `None` values for both `proposal_assigned` and `proposal_accepted`, which suggests that they may not have participated in any bids. 
+
+However, one transporter (UUID: `04419f44-2ccf-48c3-a8b6-7a37a54548c9`) has `0` proposals accepted, but it is unclear how many proposals were assigned to it.
+
+This data suggests that there may be limited participation in the bidding process among the transporters. To gain more insights, I can check the total number of proposals assigned across all transporters to see if there are any active participants. Would you like me to proceed with that?...
+2025-11-24 12:22:18,268 - INFO - RESULT: The results indicate that many transporters have `None` values for both `proposal_assigned` and `proposal_accepted`, which suggests that they may not have participated in any bids. 
+
+However, one transporter (UUID: `04419f44-2ccf-48c3-a8b6-7a37a54548c9`) has `0` proposals accepted, but it is unclear how many proposals were assigned to it.
+
+This data suggests that there may be limited participation in the bidding process among the transporters. To gain more insights, I can check the total number of proposals assigned across all transporters to see if there are any active participants. Would you like me to proceed with that?...
+2025-11-24 12:22:18,271 - INFO - TIME TAKEN: 15.05 sec
+2025-11-24 12:22:18,271 - INFO - TIME TAKEN: 15.05 sec
+2025-11-24 12:22:18,271 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:22:18,271 - INFO - --------------------------------------------------------------------------------
+2025-11-24 12:51:34,818 - INFO - USER QUERY: Show me non-fulfilment reasons trend over last 3 months
+2025-11-24 12:51:34,818 - INFO - USER QUERY: Show me non-fulfilment reasons trend over last 3 months
+2025-11-24 18:19:27,973 - ERROR - [Errno 60] Operation timed out
+2025-11-24 18:19:27,973 - ERROR - [Errno 60] Operation timed out
